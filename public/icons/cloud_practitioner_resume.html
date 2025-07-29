@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Practitioner Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c5aa0;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c5aa0;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .job {
+            margin-bottom: 20px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .company {
+            color: #2c5aa0;
+            font-weight: 600;
+        }
+        
+        .date {
+            color: #666;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .job-description {
+            margin-left: 0;
+        }
+        
+        .job-description li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .job-description li:before {
+            content: "▸";
+            color: #2c5aa0;
+            position: absolute;
+            left: 0;
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .degree {
+            font-weight: bold;
+        }
+        
+        .school {
+            color: #2c5aa0;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .skill-category h4 {
+            color: #2c5aa0;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            font-size: 13px;
+            margin-bottom: 3px;
+            padding-left: 10px;
+            position: relative;
+        }
+        
+        .skill-category li:before {
+            content: "•";
+            color: #2c5aa0;
+            position: absolute;
+            left: 0;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+        
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 3px;
+        }
+        
+        .cert-name {
+            font-weight: 600;
+            color: #2c5aa0;
+        }
+        
+        .summary {
+            text-align: justify;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        @media print {
+            body {
+                padding: 0.3in;
+                font-size: 12px;
+            }
+            
+            .name {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">John Smith</div>
+        <div class="title">AWS Certified Cloud Practitioner</div>
+        <div class="contact-info">
+            <div class="contact-item">📧 john.smith@email.com</div>
+            <div class="contact-item">📱 (555) 123-4567</div>
+            <div class="contact-item">🌐 linkedin.com/in/johnsmith</div>
+            <div class="contact-item">📍 Seattle, WA</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Results-driven Cloud Practitioner with 3+ years of experience in cloud infrastructure management, migration, and optimization. Proven expertise in AWS services, cloud security, and cost optimization strategies. Strong background in supporting enterprise-level cloud transformations and implementing best practices for scalable, reliable cloud solutions. Committed to continuous learning and staying current with emerging cloud technologies.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Cloud Support Specialist</div>
+                    <div class="company">TechCorp Solutions</div>
+                </div>
+                <div class="date">Jan 2022 - Present</div>
+            </div>
+            <ul class="job-description">
+                <li>Managed AWS infrastructure for 50+ enterprise clients, ensuring 99.9% uptime</li>
+                <li>Implemented cost optimization strategies resulting in 25% reduction in monthly cloud spend</li>
+                <li>Assisted in migrating on-premises applications to AWS, reducing infrastructure costs by 30%</li>
+                <li>Monitored cloud resources using CloudWatch and implemented automated scaling policies</li>
+                <li>Provided technical support for EC2, S3, RDS, and Lambda services</li>
+                <li>Created and maintained cloud architecture documentation and best practices guides</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">IT Support Analyst</div>
+                    <div class="company">Global Enterprises Inc.</div>
+                </div>
+                <div class="date">Jun 2021 - Dec 2021</div>
+            </div>
+            <ul class="job-description">
+                <li>Supported cloud-based applications and services for 200+ users</li>
+                <li>Troubleshot connectivity issues and performed root cause analysis</li>
+                <li>Collaborated with cloud architects on infrastructure planning and deployment</li>
+                <li>Documented technical procedures and created user training materials</li>
+                <li>Monitored system performance and generated monthly reports</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Junior System Administrator</div>
+                    <div class="company">StartUp Innovations</div>
+                </div>
+                <div class="date">Mar 2020 - May 2021</div>
+            </div>
+            <ul class="job-description">
+                <li>Maintained hybrid cloud infrastructure combining AWS and on-premises systems</li>
+                <li>Performed daily backups and disaster recovery testing procedures</li>
+                <li>Implemented security best practices and compliance monitoring</li>
+                <li>Assisted in the migration of legacy systems to cloud-native solutions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Cloud Platforms</h4>
+                <ul>
+                    <li>Amazon Web Services (AWS)</li>
+                    <li>Microsoft Azure (Basic)</li>
+                    <li>Google Cloud Platform (Basic)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>AWS Services</h4>
+                <ul>
+                    <li>EC2, S3, RDS, Lambda</li>
+                    <li>CloudWatch, CloudTrail</li>
+                    <li>IAM, VPC, ELB</li>
+                    <li>CloudFormation</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Tools & Technologies</h4>
+                <ul>
+                    <li>Terraform</li>
+                    <li>Docker</li>
+                    <li>Git/GitHub</li>
+                    <li>Linux/Windows Server</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h4>Monitoring & Security</h4>
+                <ul>
+                    <li>CloudWatch</li>
+                    <li>AWS Config</li>
+                    <li>Security Groups</li>
+                    <li>IAM Policies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="certifications">
+            <div class="cert-item">
+                <span class="cert-name">AWS Certified Cloud Practitioner</span>
+                <span class="date">2023</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-name">CompTIA A+</span>
+                <span class="date">2022</span>
+            </div>
+            <div class="cert-item">
+                <span class="cert-name">AWS Certified Solutions Architect Associate</span>
+                <span class="date">In Progress</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <div>
+                <div class="degree">Bachelor of Science in Information Technology</div>
+                <div class="school">University of Washington</div>
+            </div>
+            <div class="date">2019</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Key Projects</div>
+        
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Enterprise Cloud Migration</div>
+                </div>
+                <div class="date">2023</div>
+            </div>
+            <ul class="job-description">
+                <li>Led migration of 15 applications from on-premises to AWS</li>
+                <li>Implemented automated backup and disaster recovery solutions</li>
+                <li>Achieved 40% cost reduction and improved system performance by 60%</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Cloud Cost Optimization Initiative</div>
+                </div>
+                <div class="date">2022</div>
+            </div>
+            <ul class="job-description">
+                <li>Analyzed cloud spending patterns and identified optimization opportunities</li>
+                <li>Implemented right-sizing recommendations and reserved instance strategies</li>
+                <li>Delivered monthly cost reports to stakeholders</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
