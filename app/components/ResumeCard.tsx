@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import ScoreCircle from "./ScoreCircle";
-import { usePuterStore } from "~/lib/puter";
+import ScoreCircle from "~/components/ScoreCircle";
 import { useEffect, useState } from "react";
+import { usePuterStore } from "~/lib/puter";
 
 const ResumeCard = ({
   resume: { id, companyName, jobTitle, feedback, imagePath },
@@ -43,7 +43,6 @@ const ResumeCard = ({
           <ScoreCircle score={feedback.overallScore} />
         </div>
       </div>
-
       {resumeUrl && (
         <div className="gradient-border animate-in fade-in duration-1000">
           <div className="w-full h-full">
@@ -58,5 +57,4 @@ const ResumeCard = ({
     </Link>
   );
 };
-
 export default ResumeCard;

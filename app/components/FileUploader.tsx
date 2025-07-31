@@ -1,6 +1,6 @@
-import { useCallback } from "react";
+import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
-import { formatSize } from "~/lib/utils";
+import { formatSize } from "../lib/utils";
 
 interface FileUploaderProps {
   onFileSelect?: (file: File | null) => void;
@@ -15,12 +15,15 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     },
     [onFileSelect]
   );
+
+  const maxFileSize = 20 * 1024 * 1024; // 20MB in bytes
+
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({
       onDrop,
       multiple: false,
       accept: { "application/pdf": [".pdf"] },
-      maxSize: 20 * 1024 * 1024,
+      maxSize: maxFileSize,
     });
 
   const file = acceptedFiles[0] || null;
@@ -29,6 +32,7 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     <div className="w-full gradient-border">
       <div {...getRootProps()}>
         <input {...getInputProps()} />
+
         <div className="space-y-4 cursor-pointer">
           {file ? (
             <div
@@ -58,17 +62,15 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
           ) : (
             <div>
               <div className="mx-auto w-16 h-16 flex items-center justify-center mb-2">
-                <img
-                  src="/icons/upload.svg"
-                  alt="Upload Icon"
-                  className="size-20"
-                />
+                <img src="/icons/upload.svg" alt="upload" className="size-20" />
               </div>
               <p className="text-lg text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag
                 and drop
               </p>
-              <p className="text-lg text-gray-400">PDF (max 20 MB)</p>
+              <p className="text-lg text-gray-500">
+                PDF (max {formatSize(maxFileSize)})
+              </p>
             </div>
           )}
         </div>
@@ -76,5 +78,4 @@ const FileUploader = ({ onFileSelect }: FileUploaderProps) => {
     </div>
   );
 };
-
 export default FileUploader;

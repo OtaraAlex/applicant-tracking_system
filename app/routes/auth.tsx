@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 
 export const meta = () => [
   { title: "Resumind | Auth" },
-  { name: "description", content: "Log into your account." },
+  { name: "description", content: "Log into your account" },
 ];
 
 const Auth = () => {
